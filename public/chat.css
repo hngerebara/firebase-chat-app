@@ -9,7 +9,7 @@ body {
     max-width: 960px;
 }
 #chats {
-    max-height: 700px;
+    max-height: 550px;
     max-width: 100%;
     overflow-y: auto;
     overflow-x: hidden;
@@ -44,7 +44,7 @@ p {
 }
 .frame{
     background:#e0e0de;
-    height:800px;
+    height: 650px;
     overflow:hidden;
     padding:0;
     width: 500px;

@@ -6,8 +6,10 @@ var sendButton = document.querySelector('#sendButton');
 sendButton.addEventListener("click", function(){
     var username = usernameInput.value;
     var chatMsg = chatMsgInput.value;
-    myFirebase.push({username:username, chatMsg:chatMsg});
-    chatMsgInput.value = "";
+    if((username && chatMsg) !== ""){
+        myFirebase.push({username:username, chatMsg:chatMsg});  
+        chatMsgInput.value = "";        
+    } 
 })
 
 function toBottom(){
@@ -32,6 +34,13 @@ var beginListening = function() {
         msgElement.appendChild(msgChatElement);
         msgElement.className = "chat";
         document.getElementById("chats").appendChild(msgElement); 
+        
+        
+        // msgElement.appendChild(avatarElement)
+        // msgElement.appendChild(msgUsernameElement);
+        // msgElement.appendChild(msgChatElement);
+        
+        
         toBottom();  
     })
 }
